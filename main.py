@@ -2,16 +2,22 @@ def calculate_average(numbers):
     total_sum = 0
     count = len(numbers)
 
-    for num in numbers:
-        total_sum += num
+    if count == 0:
+        return 0
 
-    average = total_sum / count
-    return average
+    try:
+        for num in numbers:
+            total_sum += num
+
+        average = total_sum / count
+        return average
+    except TypeError:
+        return None
 
 numbers = [10, 20, 30, 40, 50]
 
 # Bug 1: Typo in function name
-avg = calcualte_average(numbers)
+avg = calculate_average(numbers)
 
 # Bug 2: Incorrect argument type
 avg_from_string = calculate_average("12345")
